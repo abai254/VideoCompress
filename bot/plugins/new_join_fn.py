@@ -60,13 +60,7 @@ async def help_message_f(client, message):
                 ),
                 parse_mode="markdown"
             )
-            return
-        except Exception:
-            await message.reply_text(
-                text="Something went Wrong. Contact my [Support Group](https://t.me/APSupportGroup).",
-                parse_mode="markdown",
-                disable_web_page_preview=True
-            )
+            
             return
     ## Force Sub ##
     await message.reply_text(
