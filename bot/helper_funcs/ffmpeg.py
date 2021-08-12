@@ -37,22 +37,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
       pass
     
     file_genertor_command = [
-      "ffmpeg",
-      "-hide_banner",
-      "-loglevel",
-      "quiet",
-      "-progress",
-      progress,
-      "-i",
-      video_file,
-      "-c:v", 
-      "h265",
-      "-preset", 
-      "ultrafast",
-      "-tune",
-      "film",
-      "-c:a",
-      "copy",
+      "ffmpeg -i "{dl}" -preset ultrafast -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y"
       out_put_file_name
     ]
     if not isAuto:
