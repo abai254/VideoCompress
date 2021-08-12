@@ -61,7 +61,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
         bitrate = str(target_bitrate//1000) + "k"
       else:
         return None
-      extra = [ "-b:v", 
+      extra = [ "-c:v", 
                 bitrate,
                 "-bufsize",
                 bitrate
